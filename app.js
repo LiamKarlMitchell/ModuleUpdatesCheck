@@ -71,9 +71,8 @@ htmlOutput += `<a href="${url}#product.info.details.release_notes">Release Notes
 		console.log(`There are ${changes.length} changed module infos.`);
 		console.log(textOutput);
 		await fs.promises.writeFile(marketplaceJsonFilename, JSON.stringify(marketplaceMagentoProducts, true, 4));
+		await mail(mailInfo);
 	}
-
-	await mail(mailInfo)
 
 }
 
